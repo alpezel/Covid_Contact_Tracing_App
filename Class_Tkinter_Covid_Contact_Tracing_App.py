@@ -39,3 +39,19 @@ class CovidContactTracingApp:
         self.male_button.pack()
         self.female_button.pack()
         self.other_button.pack()
+
+        self.disclaimer_label = tk.Label(frame, text="Data Privacy Disclaimer:")
+        self.disclaimer_label.pack()
+
+        self.disclaimer =  ("I hereby authorize this Covid Contact Tracing App, to collect and process the data indicated "
+                           "for contact tracing to control the COVID-19 transmission. I understand that my personal "
+                           "information is protected by RA 10173 or the Data Privacy Act of 2012 and that this entry will "
+                           "be deleted after 30 days from the date of accomplishment, following the National Archives of "
+                           "the Philippines protocol.")
+        
+        self.disclaimer_widget = tk.Text(frame, wrap=tk.WORD, height=10, width=20) 
+        self.disclaimer_widget.insert(tk.END, self.disclaimer)
+        self.disclaimer_widget.pack()
+        
+
+
