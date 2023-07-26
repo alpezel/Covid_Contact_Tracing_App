@@ -30,3 +30,8 @@ class CovidContactTracingApp:
         self.number_entry = tk.Entry(frame)
         self.number_entry.pack()
 
+        self.sex_label = tk.Label(frame, text="Sex:")
+        self.sex= tk.StringVar()
+        self.sex.set("")
+        self.male_button = tk.Radiobutton(frame, text="Male", variable=self.sex, value="Male")
+        self.male_button.pack()
