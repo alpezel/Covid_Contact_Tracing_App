@@ -49,9 +49,8 @@ class CovidContactTracingApp:
                            "be deleted after 30 days from the date of accomplishment, following the National Archives of "
                            "the Philippines protocol.")
         
-        self.disclaimer_widget = tk.Text(frame, wrap=tk.WORD, height=10, width=20) 
-        self.disclaimer_widget.insert(tk.END, self.disclaimer)
-        self.disclaimer_widget.pack()
-        
-
-
+        self.disclaimer_frame = tk.Frame(frame)
+        self.disclaimer_frame.pack()
+        self.disclaimer_widget = tk.Label(frame, text=self.disclaimer, wraplength=250, anchor="center",justify="center") 
+        self.disclaimer_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+       
