@@ -5,7 +5,7 @@ class CovidContactTracingApp:
     def __init__(self,root):
         self.root = root
         self.root.title("COVID Contact Tracing App")
-        self.root.geometry("200x200")
+        self.root.geometry("200x400")
 
         frame = tk.Frame(root)
         frame.pack(side = tk.LEFT, padx=10, pady=10)
@@ -32,6 +32,10 @@ class CovidContactTracingApp:
 
         self.sex_label = tk.Label(frame, text="Sex:")
         self.sex= tk.StringVar()
-        self.sex.set("")
+        self.sex.set("Prefer not to say")
         self.male_button = tk.Radiobutton(frame, text="Male", variable=self.sex, value="Male")
+        self.female_button = tk.Radiobutton(frame, text="Female", variable=self.sex, value="Female")
+        self.other_button = tk.Radiobutton(frame, text="Prefer not to say", variable=self.sex, value="Prefer not to say")
         self.male_button.pack()
+        self.female_button.pack()
+        self.other_button.pack()
