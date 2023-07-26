@@ -15,6 +15,11 @@ class CovidContactTracingApp:
         self.name_entry = tk.Entry(frame)
         self.name_entry.pack()
 
+        self.email_label = tk.Label(frame, text="Email:")
+        self.email_label.pack()
+        self.email_entry = tk.Entry(frame)
+        self.email_entry.pack()
+
         self.address_label = tk.Label(frame, text="Address:")
         self.address_label.pack()
         self.address_entry = tk.Entry(frame)
