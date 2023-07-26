@@ -12,5 +12,10 @@ class CovidContactTracingApp:
 
         self.name_label = tk.Label(frame, text="Name:")
         self.name_label.pack()
-        self.name_intput = tk.Entry(frame)
-        self.name_intput.pack()
+        self.name_entry = tk.Entry(frame)
+        self.name_entry.pack()
+
+        self.address_label = tk.Label(frame, text="Address:")
+        self.address_label.pack()
+        self.address_entry = tk.Entry(frame)
+        self.address_entry.pack()
