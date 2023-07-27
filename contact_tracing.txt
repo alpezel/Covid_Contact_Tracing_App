@@ -1,4 +1,0 @@
-Name:allis, Email:a, Address:a, Contact Number:a, Sex:Prefer not to say
-Name:allis, Email:c, Address:c, Contact Number:c, Sex:Female
-Name:alis, Email:as, Address:sa, Contact Number:sa, Sex:Male
-Name:allistaire, Email:alli@gmail.com, Address:#123 abc st. malabon city, Contact Number:1398761345, Sex:Male

@@ -12,7 +12,7 @@ class CovidContactTracingApp:
         y = (screen_height - 440) // 2
         self.root.geometry(f"290x440+{x}+{y}")
 
-        frame = tk.Frame(root)
+        frame = tk.Frame(root, bg="lightblue")
         frame.grid(row=0, column=0, padx=10, pady=10, sticky="nw")
 
         menu = tk.Menu(root)
@@ -22,57 +22,59 @@ class CovidContactTracingApp:
         menu.add_cascade(label="Search Entries", menu=search_menu)
         search_menu.add_command(label="Open Search", command=self.open_search)
 
-        self.name_label = tk.Label(frame, text="Name:")
+        self.name_label = tk.Label(frame, text="Name:",bg="lightblue", fg="black")
         self.name_label.grid(row=0, column=0, sticky="w")
-        self.name_entry = tk.Entry(frame)
+        self.name_entry = tk.Entry(frame,bg="lightyellow")
         self.name_entry.grid(row=0, column=1, padx=5, pady=2, sticky="e")
 
-        self.email_label = tk.Label(frame, text="Email:")
+        self.email_label = tk.Label(frame, text="Email:",bg="lightblue", fg="black")
         self.email_label.grid(row=1, column=0, sticky="w")
-        self.email_entry = tk.Entry(frame)
+        self.email_entry = tk.Entry(frame,bg="lightyellow")
         self.email_entry.grid(row=1, column=1, padx=5, pady=2, sticky="e")
 
-        self.address_label = tk.Label(frame, text="Address:")
+        self.address_label = tk.Label(frame, text="Address:",bg="lightblue", fg="black")
         self.address_label.grid(row=2, column=0, sticky="w")
-        self.address_entry = tk.Entry(frame)
+        self.address_entry = tk.Entry(frame,bg="lightyellow")
         self.address_entry.grid(row=2, column=1, padx=5, pady=2, sticky="e")
 
-        self.number_label = tk.Label(frame, text="Contact Number:")
+        self.number_label = tk.Label(frame, text="Contact Number:",bg="lightblue", fg="black")
         self.number_label.grid(row=3, column=0, sticky="w")
-        self.number_entry = tk.Entry(frame)
+        self.number_entry = tk.Entry(frame,bg="lightyellow")
         self.number_entry.grid(row=3, column=1, padx=5, pady=2, sticky="e")
 
-        self.sex_label = tk.Label(frame, text="Sex:")
+        self.sex_label = tk.Label(frame, text="Sex:",bg="lightblue", fg="black")
         self.sex_label.grid(row=4, column=0, sticky="w")
         self.sex= tk.StringVar()
         self.sex.set("Prefer not to say")
-        self.male_button = tk.Radiobutton(frame, text="Male", variable=self.sex, value="Male")
-        self.female_button = tk.Radiobutton(frame, text="Female", variable=self.sex, value="Female")
-        self.other_button = tk.Radiobutton(frame, text="Prefer not to say", variable=self.sex, value="Prefer not to say")
-        self.male_button.grid(row=4, column=1, padx=5, pady=2, sticky="w")
-        self.female_button.grid(row=5, column=1, padx=5, pady=2, sticky="w")
-        self.other_button.grid(row=6, column=1, padx=5, pady=2, sticky="w")
+        self.other_button = tk.Radiobutton(frame, text="Prefer not to say", variable=self.sex, value="Prefer not to say",bg="lightyellow")
+        self.female_button = tk.Radiobutton(frame, text="Female", variable=self.sex, value="Female",bg="lightyellow")
+        self.male_button = tk.Radiobutton(frame, text="Male", variable=self.sex, value="Male",bg="lightyellow")
 
-        self.disclaimer_label = tk.Label(frame, text="Data Privacy Disclaimer:")
+        
+        self.other_button.grid(row=4, column=1, padx=5, pady=2, sticky="w")
+        self.female_button.grid(row=5, column=1, padx=5, pady=2, sticky="w")
+        self.male_button.grid(row=6, column=1, padx=5, pady=2, sticky="w")
+
+        self.disclaimer_label = tk.Label(frame, text="Data Privacy Disclaimer:",bg="lightblue", fg="black")
         self.disclaimer_label.grid(row=7, column=0, sticky="w")
 
         self.disclaimer =  ("I hereby authorize this Covid Contact Tracing App, to collect and process the data indicated "
                            "for contact tracing to control the COVID-19 transmission. I understand that my personal "
-                           "information is protected by RA 10173 or the Data Privacy Act of 2012 and that this entry will "
+                           "information is protected by RA 10173 or the Data Privacy Act of 2012 and this entry will "
                            "be deleted after 30 days from the date of accomplishment, following the National Archives of "
                            "the Philippines protocol.")
         
         self.disclaimer_frame = tk.Frame(frame)
         self.disclaimer_frame.grid(row=8, column=0, columnspan=2, padx=5, pady=5, sticky="w")
-        self.disclaimer_widget = tk.Label(frame, text=self.disclaimer, wraplength=250, anchor="w",justify="left") 
+        self.disclaimer_widget = tk.Label(frame, text=self.disclaimer, wraplength=250, anchor="w",justify="left",bg="lightyellow") 
         self.disclaimer_widget.grid(row=8, column=0, columnspan=2, padx=5, pady=5, sticky="w")
        
         self.disclaimer_check_bool = tk.BooleanVar()
         
-        self.disclaimer_check = tk.Checkbutton(frame, text="I Agree to the Disclaimer", variable=self.disclaimer_check_bool)
+        self.disclaimer_check = tk.Checkbutton(frame, text="I Agree to the Disclaimer", variable=self.disclaimer_check_bool,bg="lightblue")
         self.disclaimer_check.grid(row=9, column=0, columnspan=2, pady=5, sticky="w")
 
-        self.submit_buttom = tk.Button(frame,text="Submit", command=self.save_file)
+        self.submit_buttom = tk.Button(frame,text="Submit", command=self.save_file,bg="white")
         self.submit_buttom.grid(row=10, column=0, columnspan=2, pady=5, sticky="w")
    
 
