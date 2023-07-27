@@ -5,7 +5,7 @@ class CovidContactTracingApp:
     def __init__(self,root):
         self.root = root
         self.root.title("COVID Contact Tracing App")
-        self.root.geometry("300x500")
+        self.root.geometry("500x500")
 
         frame = tk.Frame(root)
         frame.pack(side = tk.LEFT, padx=10, pady=10)
@@ -56,12 +56,18 @@ class CovidContactTracingApp:
        
         self.disclaimer_check_bool = tk.BooleanVar()
         
-        self.disclaimer_check = tk.Checkbutton(frame, text="I Agree to the Disclaimer", variable=self.disclaimer_check_bool, command=self.toggle_disclaimer)
+        self.disclaimer_check = tk.Checkbutton(frame, text="I Agree to the Disclaimer", variable=self.disclaimer_check_bool)
         self.disclaimer_check.pack()
 
-    def toggle_disclaimer(self):
-        if self.disclaimer_expanded:
-            self.disclaimer_widget.pack_forget()
-        else:
-            self.disclaimer_widget.pack()
-        self.disclaimer_expand = not self.disclaimer_expand
+        self.submit_buttom = tk.Button(frame,text="Submit")
+        self.submit_buttom.pack()
+   
+
+    def validate_userinput(self):
+        name = self.name_entry.get().strip()
+        if not all((name)):
+            print("Please Fill")
+            return False
+        return True
+      
+    
