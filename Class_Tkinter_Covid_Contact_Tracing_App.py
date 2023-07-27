@@ -70,19 +70,22 @@ class CovidContactTracingApp:
         number = self.number_entry.get().strip()
         
         if not all((name, email, address, number)):
-            print("Please Fill")
+            print("Please Fill in All the Required Fields.")
             return False
         if not self.sex.get():
-            print("Please select in the choices")
+            print("Please Select in the Choices.")
             return False
         if not self.disclaimer_check_bool.get():
-            print("Please Agree to the Disclaimer")
+            print("Please Agree to the Disclaimer.")
             return False
+        
         return True
     
     def save_file(self):
         if not self.validate_userinput():
-            messagebox.showwarning("Invalid Input")
+            messagebox.showwarning("Invalid Input","Please Fill in All the Required Fields, Agree to the Disclaimer, and Select in the Sex Choices.")
+            return
+        
         name = self.name_entry.get().strip()
         email = self.email_entry.get().strip()
         address = self.address_entry.get().strip()
@@ -90,7 +93,7 @@ class CovidContactTracingApp:
         sex = self.sex.get()
 
         with open("contact_tracing.txt","a") as file:
-            file.write(f"Name:{name}\n, Email:{email}\n, Address:{address}\n, Contact Number:{number}\n, Sex:{sex}\n")
+            file.write(f"Name:{name}\n Email:{email}\n Address:{address}\n Contact Number:{number}\n Sex:{sex}\n")
         
         self.name_entry.delete(0,tk.END)
         self.email_entry.delete(0,tk.END)
