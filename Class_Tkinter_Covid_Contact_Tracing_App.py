@@ -5,7 +5,7 @@ class CovidContactTracingApp:
     def __init__(self,root):
         self.root = root
         self.root.title("COVID Contact Tracing App")
-        self.root.geometry("200x400")
+        self.root.geometry("300x500")
 
         frame = tk.Frame(root)
         frame.pack(side = tk.LEFT, padx=10, pady=10)
@@ -54,3 +54,13 @@ class CovidContactTracingApp:
         self.disclaimer_widget = tk.Label(frame, text=self.disclaimer, wraplength=250, anchor="w",justify="left") 
         self.disclaimer_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
        
+        self.disclaimer_check_bool = tk.BooleanVar()
+        
+        self.disclaimer_check = tk.Checkbutton(frame, text="I Agree to the Disclaimer", variable=self.disclaimer_check_bool, command=self.on_disclaimer_check_click)
+        self.disclaimer_check.pack()
+
+    def on_disclaimer_check_click(self):
+        if self.disclaimer_check_bool.get():
+            print("Agreed to the disclaimer.")
+        else:
+            print("Not agreed to the disclaimer.")
