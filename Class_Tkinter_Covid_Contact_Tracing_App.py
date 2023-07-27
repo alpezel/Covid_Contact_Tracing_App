@@ -56,11 +56,12 @@ class CovidContactTracingApp:
        
         self.disclaimer_check_bool = tk.BooleanVar()
         
-        self.disclaimer_check = tk.Checkbutton(frame, text="I Agree to the Disclaimer", variable=self.disclaimer_check_bool, command=self.on_disclaimer_check_click)
+        self.disclaimer_check = tk.Checkbutton(frame, text="I Agree to the Disclaimer", variable=self.disclaimer_check_bool, command=self.toggle_disclaimer)
         self.disclaimer_check.pack()
 
-    def on_disclaimer_check_click(self):
-        if self.disclaimer_check_bool.get():
-            print("Agreed to the disclaimer.")
+    def toggle_disclaimer(self):
+        if self.disclaimer_expanded:
+            self.disclaimer_widget.pack_forget()
         else:
-            print("Not agreed to the disclaimer.")
+            self.disclaimer_widget.pack()
+        self.disclaimer_expand = not self.disclaimer_expand
