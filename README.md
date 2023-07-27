@@ -34,6 +34,14 @@ The "Class_Tkinter_Search_Entries.py" file contains a Python class named Search_
 - The search results are displayed in a new window with a simple layout.
 
 ## Outputs
+![](img/ss1.jpg)
+![](img/ss2.jpg)
+![](img/ss3.jpg)
+![](img/ss4.jpg)
+![](img/ss5.jpg)
+![](img/ss6.jpg)
+![](img/ss7.jpg)
+
 
 # How To Use / Run
 1. Install Python on your computer to run the code. You can download its latest version here: https://www.python.org/downloads/ 
