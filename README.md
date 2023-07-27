@@ -34,13 +34,13 @@ The "Class_Tkinter_Search_Entries.py" file contains a Python class named Search_
 - The search results are displayed in a new window with a simple layout.
 
 ## Outputs
-![](img/ss1.png)
-![](img/ss2.png)
-![](img/ss3.png)
-![](img/ss4.png)
-![](img/ss5.png)
-![](img/ss6.png)
-![](img/ss7.png)
+![](img/ss1.PNG) 
+![](img/ss2.PNG) 
+![](img/ss3.PNG)
+![](img/ss4.PNG)
+![](img/ss5.PNG)
+![](img/ss6.PNG)
+![](img/ss7.PNG)
 
 
 # How To Use / Run
