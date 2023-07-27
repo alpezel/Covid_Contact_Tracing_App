@@ -1,14 +1,13 @@
 import tkinter as tk
-from tkinter import messagebox
 
 class Search_Entry:
-    def __init__(self,root):
+    def __init__(self, root):
         self.root = root
         
         frame = tk.Frame(root)
         frame.pack()
 
-        self.search_label = tk.Label(frame, text="Search:")
+        self.search_label = tk.Label(frame, text="Search Name:")
         self.search_label.pack()
         self.search_entry = tk.Entry(frame)
         self.search_entry.pack()
@@ -39,9 +38,8 @@ class Search_Entry:
         result_label = tk.Label(result_window, text="Search Results:")
         result_label.pack()
 
-        result_text = tk.Text(result_window, height=10, width=50)
+        result_text = tk.Text(result_window, height=20, width=60)
         result_text.pack()
 
         for entry in entries:
             result_text.insert(tk.END, entry + "\n")
-

@@ -1,14 +1,21 @@
 import tkinter as tk
 from tkinter import messagebox
-
+from Search_Entries import Search_Entry
 class CovidContactTracingApp:
     def __init__(self,root):
         self.root = root
         self.root.title("COVID Contact Tracing App")
-        self.root.geometry("500x500")
+        self.root.geometry("600x500")
 
         frame = tk.Frame(root)
         frame.pack(side = tk.LEFT, padx=10, pady=10)
+
+        menu = tk.Menu(root)
+        root.config(menu=menu)
+
+        search_menu = tk.Menu(menu, tearoff=0)
+        menu.add_cascade(label="Search Entries", menu=search_menu)
+        search_menu.add_command(label="Open Search", command=self.open_search)
 
         self.name_label = tk.Label(frame, text="Name:")
         self.name_label.pack()
@@ -93,7 +100,7 @@ class CovidContactTracingApp:
         sex = self.sex.get()
 
         with open("contact_tracing.txt","a") as file:
-            file.write(f"Name:{name}\n Email:{email}\n Address:{address}\n Contact Number:{number}\n Sex:{sex}\n")
+            file.write(f"Name:{name}, Email:{email}, Address:{address}, Contact Number:{number}, Sex:{sex}\n")
         
         self.name_entry.delete(0,tk.END)
         self.email_entry.delete(0,tk.END)
@@ -104,5 +111,8 @@ class CovidContactTracingApp:
         print("Data Saved Successfully!")
         messagebox.showinfo("Entry Saved","Data Saved Successfully!")
 
+    def open_search(self):
+        search_window = tk.Toplevel(self.root)
+        search_entry = Search_Entry(search_window)
       
     
