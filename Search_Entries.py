@@ -35,6 +35,10 @@ class Search_Entry:
         result_window = tk.Toplevel(self.root)
         result_window.title("Search Results")
 
+        x = (self.root.winfo_screenwidth() - 600) // 2
+        y = (self.root.winfo_screenheight() - 440) // 2
+        result_window.geometry(f"600x440+{x}+{y}")
+
         result_label = tk.Label(result_window, text="Search Results:")
         result_label.pack()
 
@@ -43,3 +47,6 @@ class Search_Entry:
 
         for entry in entries:
             result_text.insert(tk.END, entry + "\n")
+
+        result_text.tag_configure("center", justify="center")
+        result_text.tag_add("center", "1.0", "end")

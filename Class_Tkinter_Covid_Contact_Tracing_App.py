@@ -5,12 +5,12 @@ class CovidContactTracingApp:
     def __init__(self,root):
         self.root = root
         self.root.title("COVID Contact Tracing App")
-        
+
         screen_width = self.root.winfo_screenwidth()
         screen_height = self.root.winfo_screenheight()
-        x = (screen_width - 600) // 2
-        y = (screen_height - 500) // 2
-        self.root.geometry(f"600x500+{x}+{y}")
+        x = (screen_width - 290) // 2
+        y = (screen_height - 440) // 2
+        self.root.geometry(f"290x440+{x}+{y}")
 
         frame = tk.Frame(root)
         frame.grid(row=0, column=0, padx=10, pady=10, sticky="nw")
@@ -122,9 +122,9 @@ class CovidContactTracingApp:
         search_window.title("Search Entries")
         screen_width = search_window.winfo_screenwidth()
         screen_height = search_window.winfo_screenheight()
-        x = (screen_width - 500) // 2
-        y = (screen_height - 300) // 2
-        search_window.geometry(f"500x300+{x}+{y}")
+        x = (screen_width - 290) // 2
+        y = (screen_height - 460) // 2
+        search_window.geometry(f"290x460+{x}+{y}")
         search_entry = Search_Entry(search_window)
       
     
