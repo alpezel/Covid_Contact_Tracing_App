@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import messagebox
 from Class_Tkinter_Covid_Contact_Tracing_App import CovidContactTracingApp
 
 if __name__ == "__main__":

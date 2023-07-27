@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from Search_Entries import Search_Entry
+from Class_Tkinter_Search_Entries import Search_Entry
 class CovidContactTracingApp:
     def __init__(self,root):
         self.root = root
